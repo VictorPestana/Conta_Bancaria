@@ -85,12 +85,12 @@ ContaPoupanca --> Conta
 ## 4. Instalação
 1. Clone este repositório:
    ```bash
-   git clone https://github.com/rafaelq80/conta_bancaria_tjs06.git
+   git clone https://github.com/VictorPestana/Conta_Bancaria
    ```
 
 2. Acesse a pasta do projeto:
    ```bash
-   cd conta_bancaria_tjs06
+   cd conta_bancaria
    ```
 
 3. Instale as dependências:
