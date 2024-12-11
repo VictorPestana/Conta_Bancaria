@@ -139,11 +139,3 @@ Adiciona um valor ao saldo de uma conta existente.
 Transfere um valor de uma conta para outra, respeitando os saldos e limites.
 
 <br />
-
-## 7. Tela Inicial do Sistema
-
-
-
-<div align="center">
-   <img src="https://i.imgur.com/MFK9yXB.png" title="source: imgur.com" width="90%"/>
-</div>
