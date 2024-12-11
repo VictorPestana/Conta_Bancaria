@@ -1,4 +1,3 @@
-import {publicDecrypt} from 'crypto';
 
 export class Conta {
 	// Modelo de Dados
