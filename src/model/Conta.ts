@@ -135,7 +135,7 @@ export class Conta {
 		console.log('*****************************************************');
 		console.log('Numero da Conta: ' + this._numero);
 		console.log('Agência: ' + this._agencia);
-		console.log(`Tipo da Conta:  ${tipo}`);
+		console.log(`Tipo da Conta: ${tipo}`);
 		console.log('Titular: ' + this._titular);
 		console.log('Saldo: ' + this._saldo.toFixed(2));
 	}
