@@ -123,15 +123,68 @@ export function main() {
         keyPress();
         break;
       case 4:
-        console.log("Atualizar Dados da Conta");
+        console.log("\n\nAtualizar dados da Conta\n\n");
+
+        console.log("Digite o número da Conta: ");
+        numero = readlinesync.questionInt("");
+
+        let conta = contas.buscarNoArray(numero);
+
+        if (conta != null) {
+          console.log("Digite o Número da agência: ");
+          agencia = readlinesync.questionInt("");
+
+          console.log("Digite o novo Nome do Titular da conta: ");
+          titular = readlinesync.question("");
+
+          console.log("\nDigite o novo Saldo da conta (R$): ");
+          saldo = readlinesync.questionFloat("");
+
+          tipo = conta.tipo;
+
+          switch (tipo) {
+            case 1:
+              console.log("Digite o novo Limite da Conta (R$): ");
+              limite = readlinesync.questionFloat("");
+              contas.atualizar(
+                new ContaCorrente(numero, agencia, tipo, titular, saldo, limite)
+              );
+              break;
+            case 2:
+              console.log("Digite o novo Dia do aniversário da Conta Poupança: ");
+              aniversario = readlinesync.questionInt("");
+              contas.atualizar(
+                new ContaPoupanca(numero, agencia, tipo, titular, saldo, aniversario)
+              );
+              break;
+          }
+        } else {
+          console.log("\nA Conta não foi encontrada!");
+        }
+
         keyPress();
         break;
       case 5:
         console.log("Apagar uma Conta");
+
+        console.log("Digite o Número da Conta: ");
+        numero = readlinesync.questionInt("");
+
+        contas.deletar(numero);
+
         keyPress();
         break;
       case 6:
         console.log("Saque");
+
+        console.log("Digite o Número da Conta: ");
+        numero = readlinesync.questionInt("");
+
+        console.log("Digite o Número da agência: ");
+        agencia = readlinesync.questionInt("");
+
+        contas.sacar(numero,valor)
+
         keyPress();
         break;
       case 7:
