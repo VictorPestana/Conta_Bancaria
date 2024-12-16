@@ -45,7 +45,8 @@ export function main() {
     console.log(" 6 - Sacar ");
     console.log(" 7 - Depositar ");
     console.log(" 8 - Transferir Valores Entre Contas ");
-    console.log(" 9 - Sair ");
+    console.log(" 9 - Buscar Conta Por Titular");
+    console.log(" 0 - Sair ");
     console.log();
     console.log("=============================================================");
     console.log();
@@ -53,7 +54,7 @@ export function main() {
 
     opcao = readlinesync.questionInt("Escolha uma opcao: ");
 
-    if (opcao === 9) {
+    if (opcao === 0) {
       console.log("\nSaindo de Banco Itáum...\n");
       sobre();
       process.exit(0);
@@ -218,9 +219,14 @@ export function main() {
         keyPress();
         break;
       case 9:
-        console.log("Saindo do programa...");
+        console.log("Consulta pelo Titular");
 
-        process.exit(0);
+        console.log("\n Digite o nome do Titular: ");
+        titular = readlinesync.question("");
+
+        contas.procurarPorTitular(titular);
+
+        keyPress();
         break;
       default:
         console.log("Opção inválida.");

@@ -17,6 +17,17 @@ export class ContaController implements ContaRepository {
       buscaConta?.visualizar();
     } else console.log("\nConta Não Encontrada!");
   }
+
+  procurarPorTitular(titular: string): void {
+    
+    // Filtragem dos Dados
+    let buscaPorTitular = this.listaContas.filter( conta => 
+      conta.titular.toUpperCase().includes(titular.toUpperCase())
+    )
+
+    buscaPorTitular.forEach( conta => conta.visualizar() );
+  }
+
   listarTodas(): void {
     for (let conta of this.listaContas) {
       conta.visualizar();
