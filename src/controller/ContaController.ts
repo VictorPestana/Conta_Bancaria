@@ -55,8 +55,28 @@ export class ContaController implements ContaRepository {
     } else console.log("\nSaque Invalido, tente novamente!");
   }
 
-  depositar(numero: number, valor: number): void {}
-  transferir(numeroOrigem: number, numeroDestino: number, valor: number): void {}
+  depositar(numero: number, valor: number): void {
+      const buscaConta = this.buscarNoArray(numero);
+  
+      if (buscaConta !== null) {
+        buscaConta.depositar(valor)
+        console.log('O Depósito foi efetuado com sucesso!')
+      }else
+          console.log('\nConta Não Foi Encontrada!')
+
+  }
+  transferir(numeroOrigem: number, numeroDestino: number, valor: number): void {
+    const contaOrigem = this.buscarNoArray(numeroOrigem)
+    const contaDestino = this.buscarNoArray(numeroDestino)
+
+    if (contaOrigem !== null && contaDestino !== null) {
+      if(contaOrigem.sacar(valor) === true) {
+        contaDestino.depositar(valor)
+        console.log('A Transferencia foi efetuado com sucesso!')
+      } else 
+        console.log('A Conta de Origem e/ou Conta de Destino não foi encontrada!')
+      }
+  }
 
   // Métodos Auxiliares
 
